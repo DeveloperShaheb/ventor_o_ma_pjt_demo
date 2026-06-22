@@ -1,0 +1,9 @@
+{
+  "name": "Aurelia Vatican Travel",
+  "short_name": "Aurelia Vatican",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#f6f2ea",
+  "theme_color": "#12203a",
+  "icons": []
+}

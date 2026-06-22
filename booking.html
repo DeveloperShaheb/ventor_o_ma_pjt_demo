@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Booking — Aurelia Vatican Travel</title>
+  <meta name="description" content="Choose your date, time slot, ticket type, language, and extras with real-time availability." />
+  <meta property="og:title" content="Booking — Aurelia Vatican Travel" />
+  <meta property="og:description" content="Choose your date, time slot, ticket type, language, and extras with real-time availability." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Booking — Aurelia Vatican Travel" />
+  <meta name="twitter:description" content="Choose your date, time slot, ticket type, language, and extras with real-time availability." />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body data-page="booking">
+  <div id="app">
+    <div class="site-shell">
+      <div class="topbar">
+        <div class="wrap">
+          <div class="badge-line">
+            <span class="badge">Independent platform</span>
+            <span class="badge">Official portal: <strong>tickets.museivaticani.va</strong></span>
+          </div>
+          <div class="badge-line">
+            <span>Premium support</span>
+            <span>·</span>
+            <span>+39 06 0000 0000</span>
+          </div>
+        </div>
+      </div>
+
+      <header class="header">
+        <div class="wrap" style="position:relative">
+          <a class="brand" href="index.html">
+            <span class="brand-mark">✦</span>
+            <span>
+              <span class="brand-name">Vento Roma</span><br>
+              <span class="brand-tag">Luxury Vatican Museums tickets and trip planning</span>
+            </span>
+          </a>
+          <button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
+          <nav class="nav" id="navMenu">
+            <a href="index.html">Home</a>
+            <a href="tickets.html">Tickets</a>
+            <a href="visit.html">Plan your visit</a>
+            <a href="faq.html">FAQ</a>
+            <a href="blog.html">Travel tips</a>
+            <a href="contact.html">Contact</a>
+            <a href="admin.html">Admin</a>
+            <a class="nav-cta active" href="booking.html">Book now</a>
+          </nav>
+        </div>
+      </header>
+
+      <main class="page">
+        <section class="section">
+          <div class="page-wrap split">
+            <div>
+              <div class="section-title">
+                <div>
+                  <h1 class="headline" style="font-size:clamp(2.2rem,4vw,4.8rem)">Book your Vatican Museums visit.</h1>
+                  <p>Choose the date, time slot, language, and add-ons. Availability and pricing update as you change the form.</p>
+                </div>
+              </div>
+
+              <div class="panel">
+                <div class="stepper">
+                  <div class="step"><span class="num">1</span> Visit details</div>
+                  <div class="step"><span class="num">2</span> Guest details</div>
+                  <div class="step"><span class="num">3</span> Checkout</div>
+                </div>
+
+                <div style="height:18px"></div>
+
+                <form id="bookingForm" class="grid" style="gap:18px">
+                  <div class="grid grid-2">
+                    <div>
+                      <label for="bookingDate">Visit date</label>
+                      <input class="input" id="bookingDate" type="date" required>
+                    </div>
+                    <div>
+                      <label for="bookingTime">Time slot</label>
+                      <select id="bookingTime" required>
+                        <option>08:00</option>
+                        <option>10:00</option>
+                        <option>12:00</option>
+                        <option>14:00</option>
+                        <option>16:00</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="grid grid-2">
+                    <div>
+                      <label for="bookingTicket">Ticket type</label>
+                      <select id="bookingTicket" required>
+                        <option value="full-entry">Full Entry Ticket</option>
+                        <option value="full-entry-skip">Full Entry Ticket with Skip the Line</option>
+                        <option value="reduced-entry">Reduced Entry Ticket</option>
+                        <option value="student-ticket">Student Ticket</option>
+                        <option value="school-ticket">School Ticket</option>
+                        <option value="pilgrimage-ticket">Pilgrimage Ticket</option>
+                        <option value="university-ticket">University Institutes Ticket</option>
+                        <option value="seminary-ticket">Seminaries and Religious Colleges Ticket</option>
+                        <option value="family-audio">Family / Audio Guide Option</option>
+                        <option value="accessibility-free">Accessibility / Free Entry Category</option>
+                        <option value="guided-tour-addon">Optional Guided Tour Add-on</option>
+                        <option value="audio-guide-addon">Optional Audio Guide Add-on</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label for="bookingQty">Quantity</label>
+                      <input class="input" id="bookingQty" type="number" min="1" max="20" value="1" required>
+                    </div>
+                  </div>
+
+                  <div class="grid grid-2">
+                    <div>
+                      <label for="bookingLang">Language</label>
+                      <select id="bookingLang" required>
+                        <option>English</option>
+                        <option>Italian</option>
+                        <option>Spanish</option>
+                        <option>French</option>
+                        <option>German</option>
+                        <option>Portuguese</option>
+                        <option>Japanese</option>
+                        <option>Arabic</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label for="bookingAddOn">Add-on</label>
+                      <select id="bookingAddOn">
+                        <option value="">No add-on</option>
+                        <option value="guided-tour-addon">Optional Guided Tour Add-on</option>
+                        <option value="audio-guide-addon">Optional Audio Guide Add-on</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="grid grid-2">
+                    <div>
+                      <label for="bookingPromo">Promo code</label>
+                      <input class="input" id="bookingPromo" value="" placeholder="Enter code">
+                    </div>
+                    <div>
+                      <label>Need traveler names / passport fields?</label>
+                      <select id="needsPassport">
+                        <option value="no">No</option>
+                        <option value="yes">Yes, include traveler details</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div id="travelerFields" class="hidden grid" style="gap:12px">
+                    <div class="grid grid-2">
+                      <div>
+                        <label for="travelerName">Primary traveler name</label>
+                        <input class="input" id="travelerName" placeholder="Full name" value="">
+                      </div>
+                      <div>
+                        <label for="passportNumber">Passport / ID number</label>
+                        <input class="input" id="passportNumber" placeholder="Passport number" value="">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="notice" id="availabilityBox">
+                    <strong>Availability</strong>
+                    <p class="small" id="availabilityText">Select your date to view live availability.</p>
+                  </div>
+
+                  <div class="ticket-actions">
+                    <button class="btn btn-primary" type="submit">🔒 Continue to checkout</button>
+                    <a class="btn btn-ghost" href="tickets.html">Compare tickets again</a>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <div class="panel">
+              <div class="ticket-price" id="bookingPrice">€20</div>
+              <p class="small">Dynamic pricing summary, based on your selections.</p>
+
+              <div class="info-card">
+                <h3>Selected ticket</h3>
+                <p id="selectedTicketName" style="margin:0 0 8px" class="muted">Full Entry Ticket</p>
+                <p id="selectedTicketSummary" class="muted" style="margin:0;line-height:1.75">The essential entry option for independent visitors who want a classic Vatican Museums experience.</p>
+              </div>
+
+              <div style="height:14px"></div>
+
+              <div class="notice">
+                <strong>Important policy reminder</strong>
+                <p class="small">Reduced, student, pilgrimage, university, seminary, and accessibility categories are eligibility-based. The page keeps these rules visible before you proceed.</p>
+              </div>
+
+              <div style="height:14px"></div>
+
+              <div class="info-card">
+                <h3>Checkout trust</h3>
+                <ul class="card-list">
+                  <li>Secure payment UI</li>
+                  <li>Anti-fraud notice</li>
+                  <li>Clear non-refundable policy display</li>
+                  <li>Confirmation by email and WhatsApp UI</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="wrap">
+          <div class="disclaimer">
+            <strong>Disclaimer:</strong> Independent booking platform. The official online ticketing portal of the Vatican Museums is tickets.museivaticani.va. This website is an independent booking and planning experience. Ticket prices, availability, and visitor policies are editable in the admin dashboard.
+          </div>
+          <div class="footer-grid">
+            <div>
+              <h4>Vento Roma Travel</h4>
+              <p>A calm, elegant, conversion-focused travel experience for visitors planning the Vatican Museums with confidence.</p>
+              <div class="pill-row">
+                <a class="pill" href="#">Instagram</a>
+                <a class="pill" href="#">WhatsApp</a>
+                <a class="pill" href="#">YouTube</a>
+              </div>
+            </div>
+            <div>
+              <h4>Contact</h4>
+              <p><strong>General information:</strong><br>+39 06 69883145</p>
+              <p><strong>Email:</strong><br>info.musei@scv.va</p>
+              <p><strong>Directorate:</strong><br>+39 06 69883332</p>
+              <p><strong>Visitor support:</strong><br>accoglienza.musei@scv.va</p>
+            </div>
+            <div>
+              <h4>Policies</h4>
+              <p><a href="policies.html#terms">Terms</a></p>
+              <p><a href="policies.html#refund">Refund policy</a></p>
+              <p><a href="policies.html#privacy">Privacy policy</a></p>
+              <p><a href="policies.html#cookies">Cookie policy</a></p>
+            </div>
+            <div>
+              <h4>Visitor notes</h4>
+              <p>Opening hours, cloakroom guidance, photography rules, accessibility details, and route planning are all available on the visitor guide page.</p>
+              <p><a href="visit.html">Read visitor guide</a></p>
+              <p><a href="accessibility.html">Accessibility</a></p>
+              <p><a href="faq.html">FAQ</a></p>
+            </div>
+          </div>
+          <div class="footer-bottom"><span>© 2026 Vento Roma.</span><span>Built for fast publishing, CMS editing, and premium international booking.</span></div>
+        </div>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>
